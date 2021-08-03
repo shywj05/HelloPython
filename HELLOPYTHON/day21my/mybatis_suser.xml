@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Test">
+
+	<select id="select">
+		select user_id, pwd, user_name, mobile, email, birth, in_date, in_user_id, up_date, up_user_id from suser
+	</select>
+
+	<update id="insert">
+		insert into suser(user_id, pwd, user_name, mobile, email, birth, in_date, in_user_id, up_date, up_user_id) values (:1,:2,:3,:4,:5,:6,:7,:8,:9,:10)
+	</update>
+
+	<update id="update">
+		update suser set pwd=:1, user_name=:2, mobile=:3, email=:4, birth=:5, in_date=:6, in_user_id=:7, up_date=:8, up_user_id=:9 where user_id=:10
+	</update>
+
+	<update id="delete">
+		delete from suser where user_id=:1
+	</update>
+
+</mapper>

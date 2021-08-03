@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<script src='js/jquery-3.5.1.js'></script>
+<title>login</title>
+<script>
+	function fn_login(){
+
+		var user_id = $("#user_id").val();
+		var pwd = $("#pwd").val();
+
+
+		var param = "";
+		param += "dummy=" + Math.random();
+		param += "&user_id=" + user_id
+		param += "&pwd=" + pwd
+
+		$.ajax({
+			url : "login.ajax",
+			data : param,
+			dataType : "json",
+			type : "post",
+			async : false,
+			success : function(data) {
+				if(data.msg == "ok"){
+					console.log(data)
+					location.href = "main";
+				} else{
+					alert("아이디, 비밀번호를 다시 확인해주세요")
+				}
+			}
+		});
+	}
+
+</script>
+</head>
+
+<body>
+	<form>
+		회원아이디 : <input type="text" id="user_id"><br/>		
+		비밀번호 : <input type="password" id="pwd"><br/>	
+		<input type="button" onclick="fn_login()" value="로그인">	
+	
+	</form>
+	
+	
+</body>
+</html>
+

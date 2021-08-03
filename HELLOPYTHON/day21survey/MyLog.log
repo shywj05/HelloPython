@@ -1,0 +1,7 @@
+2021-03-03 16:14:14,342 - MyLog - DEBUG - 
+delete
+from suser
+where USER_ID = :1
+2021-03-03 16:14:41,217 - MyLog - DEBUG - 
+insert into suser (USER_ID, PWD, USER_NAME, MOBILE, EMAIL, BIRTH, IN_DATE, IN_USER_ID, UP_DATE, UP_USER_ID)
+values (:1, :2, :3, :4, :5, :6, to_char(sysdate, 'YYYYMMDD.HH24MISS'), :7, to_char(sysdate, 'YYYYMMDD.HH24MISS'), :8)
